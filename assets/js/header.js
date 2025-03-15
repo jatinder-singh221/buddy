@@ -69,18 +69,21 @@ const getTaxTableData = () => {
 
 const handleCalculateTax = (event) => {
     event.preventDefault()
+
+    // inputs
     const name = document.getElementById('name').value
     const quantity = document.getElementById('quantity').value
     const amount = document.getElementById('amount').value
     const IGST = document.getElementById('IGST').value
 
+    // elements
     const taxableValueElement = document.getElementById('taxable-value')
     const cgstAmountElement = document.getElementById('cgst-amount')
     const cgstPercentageElement = document.getElementById('cgst-percentage')
     const totalElement = document.getElementById('total-amount')
 
     const totalAmount = Math.round(quantity * amount)
-    const taxableAmount = Math.round(amount / (100 + parseInt(IGST)) * 100)
+    const taxableAmount = Math.round(totalAmount / (100 + parseInt(IGST)) * 100)
 
     totalElement.innerHTML = totalAmount
     taxableValueElement.innerHTML = taxableAmount
