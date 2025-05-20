@@ -10,9 +10,25 @@
             and individuals.  calculate GST-inclusive/exclusive prices,  accurate 
             estimates, store history locally for easy access.
         ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://buddy-zeta-ten.vercel.app/index.html" />
+    <meta name="keywords"
+        content="GST calculator, estimate maker, GST app, invoice tool, tax calculator, GST inclusive price, GST exclusive price, business tool, finance app, Buddy app">
     <link rel="shortcut icon" href="assets/images/ico.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/header.js"></script>
+
+
+    <meta property="og:title" content="Buddy | Calculate, Estimate, Store">
+    <meta property="og:description"
+        content="Use Buddy to calculate GST, create accurate estimates, and keep a record of your transactions with local storage. Perfect for individuals and businesses.">
+    <meta property="og:url" content="https://buddy-zeta-ten.vercel.app/index.html/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buddy | GST Calculator & Estimate Maker">
+    <meta name="twitter:description"
+        content="Easily calculate GST-inclusive or exclusive prices and generate precise estimates with Buddy. Store your data locally.">
 </head>
 
 <body class="w-full h-full">
@@ -27,9 +43,9 @@
                 class="h-12 border border-slate-200 rounded-full px-4 text-[18px]" placeholder="Quantity"
                 inputmode="numeric" required>
             <input type="number" name="" id="amount" class="h-12 border border-slate-200 rounded-full px-4 text-[18px]"
-                placeholder="Amount" inputmode="numeric" required>
+                placeholder="Amount" inputmode="decimal" required>
             <input type="number" name="" id="IGST" class="h-12 border border-slate-200 rounded-full px-4 text-[18px]"
-                placeholder="IGST Percentage" inputmode="numeric" required>
+                placeholder="IGST Percentage" inputmode="decimal" required>
             <button type="submit"
                 class="bg-[#6927DA] rounded-full w-full lg:w-auto lg:px-8 py-2 lg:py-4 text-lg text-white font-semibold text-center">
                 Calculate tax!</button>
@@ -56,6 +72,7 @@
                     <table id="historyTable" class="w-full">
                         <thead class="sticky top-0 bg-gray-100 text-nowrap">
                             <tr>
+                                <th class="border-2 border-slate-200 py-2 px-4 gap-1">SNO</th>
                                 <th class="border-2 border-slate-200 py-2 px-4 gap-1">Name</th>
                                 <th class="border-2 border-slate-200 py-2 px-4 gap-1">Taxable Amount</th>
                                 <th class="border-2 border-slate-200 py-2 px-4 gap-1">CGST-SGST%</th>

@@ -2,9 +2,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         const navbar = await fetch('navbar.html')
         const response = await navbar.text()
-        const header = document.createElement("nav")
+        const header = document.createElement("header")
         header.innerHTML = response
         document.body.prepend(header)
+
+        const footer = await fetch('footer.html')
+        const footerResponse = await footer.text()
+        const footerElement = document.createElement("footer")
+        footerElement.innerHTML = footerResponse
+        document.body.appendChild(footerElement)
+
         const button = document.querySelector('#menu-button')
 
         button.addEventListener('click', () => {
@@ -49,15 +56,16 @@ const getTaxTableData = () => {
     historyBody.innerHTML = ""
     
     if (taxData){
-        taxData.forEach(item => {
+        taxData.forEach((item, index)  => {
             const row = document.createElement("tr")
             totalSum += item.total
     
             row.innerHTML = `
+            <td class="border border-gray-300 px-4 py-2">${index+1}</td>
             <td class="border border-gray-300 px-4 py-2">${item.name || 'Null'}</td>
                 <td class="border border-gray-300 px-4 py-2">${item.taxableValue}</td>
-                <td class="border border-gray-300 px-4 py-2">${item.percentage} %</td>
-                <td class="border border-gray-300 px-4 py-2">${item.csgstAmount}</td>
+                <td class="border border-gray-300 px-4 py-2">${item.percentage}% - ${item.percentage}%</td>
+                <td class="border border-gray-300 px-4 py-2">${item.csgstAmount} - ${item.csgstAmount}</td>
                 <td class="border border-gray-300 px-4 py-2">${item.total}</td>
             `
             historyBody.appendChild(row)
