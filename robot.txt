@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buddy-zeta-ten.vercel.app/sitemap.xml
